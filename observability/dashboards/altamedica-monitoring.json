@@ -1,0 +1,397 @@
+{
+  "dashboard": {
+    "id": "altamedica-monitoring",
+    "title": "AltaMedica Production Monitoring",
+    "description": "Comprehensive monitoring dashboard for AltaMedica healthcare platform",
+    "version": "1.0.0",
+    "created": "2024-09-15T00:00:00Z",
+    "updated": "2024-09-15T00:00:00Z",
+    "tags": ["healthcare", "hipaa", "telemedicine", "production"],
+    "refresh": "30s",
+    "time_range": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": "system-overview",
+        "title": "System Overview",
+        "type": "stat",
+        "gridPos": { "x": 0, "y": 0, "w": 24, "h": 4 },
+        "targets": [
+          {
+            "expr": "altamedica_uptime_seconds",
+            "legendFormat": "Uptime",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(altamedica_api_calls_total[5m])",
+            "legendFormat": "Request Rate",
+            "refId": "B"
+          },
+          {
+            "expr": "avg(altamedica_api_response_time_ms)",
+            "legendFormat": "Avg Response Time",
+            "refId": "C"
+          },
+          {
+            "expr": "altamedica_errors_total",
+            "legendFormat": "Error Count",
+            "refId": "D"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "min": 0
+          },
+          "overrides": [
+            {
+              "matcher": { "id": "byName", "options": "Uptime" },
+              "properties": [
+                { "id": "unit", "value": "s" },
+                { "id": "color", "value": { "mode": "fixed", "fixedColor": "green" } }
+              ]
+            },
+            {
+              "matcher": { "id": "byName", "options": "Request Rate" },
+              "properties": [
+                { "id": "unit", "value": "reqps" },
+                { "id": "color", "value": { "mode": "fixed", "fixedColor": "blue" } }
+              ]
+            },
+            {
+              "matcher": { "id": "byName", "options": "Avg Response Time" },
+              "properties": [
+                { "id": "unit", "value": "ms" },
+                { "id": "color", "value": { "mode": "fixed", "fixedColor": "orange" } }
+              ]
+            },
+            {
+              "matcher": { "id": "byName", "options": "Error Count" },
+              "properties": [
+                { "id": "unit", "value": "short" },
+                { "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "health-status",
+        "title": "Service Health Status",
+        "type": "table",
+        "gridPos": { "x": 0, "y": 4, "w": 12, "h": 6 },
+        "targets": [
+          {
+            "expr": "altamedica_health_check{service!=\"\"}",
+            "legendFormat": "{{service}}",
+            "refId": "A",
+            "format": "table"
+          }
+        ],
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "__name__": true,
+                "job": true,
+                "instance": true
+              },
+              "renameByName": {
+                "service": "Service",
+                "Value": "Status"
+              }
+            }
+          }
+        ],
+        "fieldConfig": {
+          "overrides": [
+            {
+              "matcher": { "id": "byName", "options": "Status" },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background",
+                    "mode": "basic"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": { "1": { "color": "green", "index": 0, "text": "Healthy" } },
+                      "type": "value"
+                    },
+                    {
+                      "options": { "0": { "color": "red", "index": 1, "text": "Unhealthy" } },
+                      "type": "value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "response-times",
+        "title": "API Response Times",
+        "type": "timeseries",
+        "gridPos": { "x": 12, "y": 4, "w": 12, "h": 6 },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(altamedica_api_response_time_ms_bucket[5m]))",
+            "legendFormat": "95th percentile",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(altamedica_api_response_time_ms_bucket[5m]))",
+            "legendFormat": "50th percentile",
+            "refId": "B"
+          },
+          {
+            "expr": "avg(rate(altamedica_api_response_time_ms_sum[5m]) / rate(altamedica_api_response_time_ms_count[5m]))",
+            "legendFormat": "Average",
+            "refId": "C"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ms",
+            "min": 0
+          }
+        }
+      },
+      {
+        "id": "error-rates",
+        "title": "Error Rates by Endpoint",
+        "type": "timeseries",
+        "gridPos": { "x": 0, "y": 10, "w": 12, "h": 6 },
+        "targets": [
+          {
+            "expr": "rate(altamedica_api_calls_total{status_class=\"4xx\"}[5m])",
+            "legendFormat": "4xx Errors - {{endpoint}}",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(altamedica_api_calls_total{status_class=\"5xx\"}[5m])",
+            "legendFormat": "5xx Errors - {{endpoint}}",
+            "refId": "B"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "reqps",
+            "min": 0
+          }
+        }
+      },
+      {
+        "id": "memory-usage",
+        "title": "Memory Usage",
+        "type": "timeseries",
+        "gridPos": { "x": 12, "y": 10, "w": 12, "h": 6 },
+        "targets": [
+          {
+            "expr": "altamedica_memory_usage_bytes{type=\"rss\"}",
+            "legendFormat": "RSS Memory",
+            "refId": "A"
+          },
+          {
+            "expr": "altamedica_memory_usage_bytes{type=\"heap_used\"}",
+            "legendFormat": "Heap Used",
+            "refId": "B"
+          },
+          {
+            "expr": "altamedica_memory_usage_bytes{type=\"heap_total\"}",
+            "legendFormat": "Heap Total",
+            "refId": "C"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "bytes",
+            "min": 0
+          }
+        }
+      },
+      {
+        "id": "user-activity",
+        "title": "User Activity",
+        "type": "timeseries",
+        "gridPos": { "x": 0, "y": 16, "w": 12, "h": 6 },
+        "targets": [
+          {
+            "expr": "rate(altamedica_user_action{action=\"login\"}[5m])",
+            "legendFormat": "Logins",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(altamedica_user_action{action=\"logout\"}[5m])",
+            "legendFormat": "Logouts",
+            "refId": "B"
+          },
+          {
+            "expr": "rate(altamedica_auth_events_total{event=\"failed_login\"}[5m])",
+            "legendFormat": "Failed Logins",
+            "refId": "C"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ops",
+            "min": 0
+          }
+        }
+      },
+      {
+        "id": "hipaa-compliance",
+        "title": "HIPAA Compliance Status",
+        "type": "stat",
+        "gridPos": { "x": 12, "y": 16, "w": 12, "h": 6 },
+        "targets": [
+          {
+            "expr": "altamedica_hipaa_encryption_enabled",
+            "legendFormat": "Encryption Enabled",
+            "refId": "A"
+          },
+          {
+            "expr": "altamedica_audit_logging_enabled",
+            "legendFormat": "Audit Logging",
+            "refId": "B"
+          },
+          {
+            "expr": "altamedica_access_controls_enabled",
+            "legendFormat": "Access Controls",
+            "refId": "C"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": { "1": { "color": "green", "index": 0, "text": "Enabled" } },
+                "type": "value"
+              },
+              {
+                "options": { "0": { "color": "red", "index": 1, "text": "Disabled" } },
+                "type": "value"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "annotations": {
+      "list": [
+        {
+          "name": "Deployments",
+          "datasource": "prometheus",
+          "enable": true,
+          "expr": "changes(altamedica_build_info[1d])",
+          "iconColor": "blue",
+          "textFormat": "Deployment: {{version}}"
+        },
+        {
+          "name": "Incidents",
+          "datasource": "prometheus",
+          "enable": true,
+          "expr": "increase(altamedica_errors_total[5m]) > 10",
+          "iconColor": "red",
+          "textFormat": "High Error Rate Detected"
+        }
+      ]
+    },
+    "templating": {
+      "list": [
+        {
+          "name": "environment",
+          "type": "query",
+          "query": "label_values(altamedica_uptime_seconds, environment)",
+          "current": {
+            "value": "production",
+            "text": "production"
+          }
+        },
+        {
+          "name": "service",
+          "type": "query",
+          "query": "label_values(altamedica_health_check, service)",
+          "multi": true,
+          "includeAll": true
+        }
+      ]
+    }
+  },
+  "alerts": [
+    {
+      "name": "High Error Rate",
+      "condition": "rate(altamedica_api_calls_total{status_class=\"5xx\"}[5m]) > 0.05",
+      "severity": "critical",
+      "description": "API error rate is above 5%",
+      "for": "2m",
+      "annotations": {
+        "summary": "High error rate detected",
+        "description": "API error rate has been above 5% for more than 2 minutes"
+      }
+    },
+    {
+      "name": "Service Down",
+      "condition": "altamedica_health_check == 0",
+      "severity": "critical",
+      "description": "Service health check is failing",
+      "for": "30s",
+      "annotations": {
+        "summary": "Service {{$labels.service}} is down",
+        "description": "Health check for {{$labels.service}} has been failing for 30 seconds"
+      }
+    },
+    {
+      "name": "High Response Time",
+      "condition": "histogram_quantile(0.95, rate(altamedica_api_response_time_ms_bucket[5m])) > 5000",
+      "severity": "warning",
+      "description": "95th percentile response time is above 5 seconds",
+      "for": "5m",
+      "annotations": {
+        "summary": "High response times detected",
+        "description": "95th percentile response time has been above 5 seconds for 5 minutes"
+      }
+    },
+    {
+      "name": "Memory Usage High",
+      "condition": "altamedica_memory_usage_bytes{type=\"rss\"} > 500000000",
+      "severity": "warning",
+      "description": "Memory usage is above 500MB",
+      "for": "5m",
+      "annotations": {
+        "summary": "High memory usage",
+        "description": "RSS memory usage has been above 500MB for 5 minutes"
+      }
+    },
+    {
+      "name": "Failed Login Attempts",
+      "condition": "rate(altamedica_auth_events_total{event=\"failed_login\"}[5m]) > 0.1",
+      "severity": "warning",
+      "description": "High rate of failed login attempts",
+      "for": "2m",
+      "annotations": {
+        "summary": "Security: High failed login rate",
+        "description": "Failed login attempts are above normal threshold"
+      }
+    },
+    {
+      "name": "HIPAA Compliance Issue",
+      "condition": "altamedica_hipaa_encryption_enabled == 0 or altamedica_audit_logging_enabled == 0",
+      "severity": "critical",
+      "description": "HIPAA compliance requirement is not met",
+      "for": "0s",
+      "annotations": {
+        "summary": "HIPAA compliance violation",
+        "description": "Critical HIPAA requirement is not enabled"
+      }
+    }
+  ]
+}

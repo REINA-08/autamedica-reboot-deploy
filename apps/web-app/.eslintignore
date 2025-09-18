@@ -1,0 +1,24 @@
+# Build outputs
+.next/
+dist/
+build/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env*
+
+# Generated files
+*.tsbuildinfo
+
+# Cache and logs
+.turbo/
+.cache/
+.log
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

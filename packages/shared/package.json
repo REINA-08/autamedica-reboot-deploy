@@ -1,0 +1,34 @@
+{
+  "name": "@autamedica/shared",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -w -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "check-types": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "rimraf": "^5.0.0",
+    "typescript": "5.9.2",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@autamedica/types": "workspace:*"
+  }
+}

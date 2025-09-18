@@ -1,0 +1,386 @@
+
+==== Contexto del sistema ====
+
+Linux edu-HP-Spectre-x360-Convertible-13-ac0XX 6.14.0-29-generic #29-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug  7 18:32:38 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+v22.19.0
+9.0.0
+10.9.3
+
+==== Ruta actual y archivos clave ====
+
+/root/altamedica-reboot
+
+total 336
+drwxrwxr-x 15 root root   4096 sep 15 19:41 .
+drwx------ 27 root root   4096 sep 15 19:40 ..
+drwxrwxr-x  3 root root   4096 sep 15 09:52 apps
+-rw-r--r--  1 root root   6427 sep 15 11:02 CLAUDE.md
+-rwxr-xr-x  1 root root   3184 sep 15 19:41 collect_vercel_diagnostics.sh
+drwxr-xr-x  2 root root   4096 sep 15 18:09 docs
+-rw-r--r--  1 root root   5248 sep 15 18:09 .env.development.example
+-rw-r--r--  1 root root   9596 sep 15 12:14 .env.example
+-rw-r--r--  1 root root   4432 sep 15 18:09 .env.production.example
+-rw-r--r--  1 root root   5883 sep 15 18:09 .env.staging.example
+-rw-r--r--  1 root root   1745 sep 15 12:01 eslint.config.mjs
+-rw-r--r--  1 root root   1565 sep 15 18:09 .eslintrc.security.json
+drwxr-xr-x  7 root root   4096 sep 15 19:40 .git
+drwxr-xr-x  3 root root   4096 sep 15 10:54 .github
+-rw-r--r--  1 root root    399 sep 15 09:22 .gitignore
+drwxr-xr-x  3 root root   4096 sep 15 18:09 .husky
+drwxr-xr-x 11 root root   4096 sep 15 19:32 node_modules
+-rw-r--r--  1 root root      0 sep 15 09:22 .npmrc
+drwxr-xr-x  8 root root   4096 sep 15 18:09 observability
+-rw-r--r--  1 root root   1893 sep 15 18:09 package.json
+drwxrwxr-x  8 root root   4096 sep 15 09:52 packages
+-rw-r--r--  1 root root 163929 sep 15 18:09 pnpm-lock.yaml
+-rw-r--r--  1 root root     40 sep 15 09:22 pnpm-workspace.yaml
+-rw-r--r--  1 root root   4714 sep 15 10:58 README.md
+drwxr-xr-x  2 root root   4096 sep 15 18:09 scripts
+-rw-r--r--  1 root root   6711 sep 15 18:09 SECURITY.md
+drwxr-xr-x  3 root root   4096 sep 15 18:09 supabase
+-rw-r--r--  1 root root    142 sep 15 12:00 test-env-rule.ts
+-rw-r--r--  1 root root    562 sep 15 12:01 test-eslint.config.mjs
+-rw-r--r--  1 root root   1316 sep 15 10:54 tsconfig.base.json
+drwxr-xr-x  3 root root   4096 sep 15 09:49 .turbo
+-rw-r--r--  1 root root    660 sep 15 19:32 turbo.json
+drwxr-xr-x  2 root root   4096 sep 15 19:11 .vercel
+-rw-r--r--  1 root root    277 sep 15 19:41 vercel_diagnostics_2025-09-15_194153.log
+-rw-r--r--  1 root root    161 sep 15 19:40 vercel.json
+-rw-r--r--  1 root root     44 sep 15 12:57 .vercel-staging
+drwxr-xr-x  2 root root   4096 sep 15 10:41 .vscode
+
+==== Monorepo básico ====
+
+Encontrado: pnpm-workspace.yaml
+Encontrado: package.json (root)
+Encontrado: vercel.json (root)
+
+==== Git ====
+
+true
+origin	https://github.com/REINA-08/altamedica-reboot.git (fetch)
+origin	https://github.com/REINA-08/altamedica-reboot.git (push)
+commit e52b6f02cf5b145c6ce4520f8aae157946593a40
+Author:     REINA-08 <reinamosquera2003@gmail.com>
+AuthorDate: Mon Sep 15 19:40:29 2025 -0300
+Commit:     REINA-08 <reinamosquera2003@gmail.com>
+CommitDate: Mon Sep 15 19:40:29 2025 -0300
+
+    Fix outputDirectory path in vercel.json
+    
+    Since Root Directory is set to apps/web-app in Vercel dashboard,
+    outputDirectory should be relative to that path (.next not apps/web-app/.next)
+
+==== Next info ====
+
+This project is configured to use pnpm because /root/altamedica-reboot/package.json has a "packageManager" field
+This project is configured to use pnpm because /root/altamedica-reboot/package.json has a "packageManager" field
+
+Operating System:
+  Platform: linux
+  Arch: x64
+  Version: #29-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug  7 18:32:38 UTC 2025
+  Available memory (MB): 15360
+  Available CPU cores: 4
+Binaries:
+  Node: 22.19.0
+  npm: 10.9.3
+  Yarn: N/A
+  pnpm: 9.0.0
+Relevant Packages:
+  next: 15.5.3 // Latest available version is detected (15.5.3).
+  eslint-config-next: N/A
+  react: 19.1.1
+  react-dom: 19.1.1
+  typescript: N/A
+Next.js Config:
+  output: N/A
+
+==== Vercel CLI e identidad ====
+
+Vercel CLI 47.0.6
+47.0.6
+Vercel CLI 47.0.6
+reina-08
+
+==== vercel link (comprobación, sin cambios) ====
+
+> [debug] [2025-09-15T22:42:19.329Z] Found config in file "/root/altamedica-reboot/vercel.json"
+Vercel CLI 47.0.6
+> [debug] [2025-09-15T22:42:19.334Z] user supplied known subcommand: "link"
+WARN! `--confirm` is deprecated, please use `--yes` instead
+> [debug] [2025-09-15T22:42:19.393Z] Found ".git/config" - detected "/root/altamedica-reboot" as repo root
+> [debug] [2025-09-15T22:42:19.463Z] Spinner invoked (Retrieving project…) with a 1000ms delay
+> [debug] [2025-09-15T22:42:19.518Z] #1 → GET https://api.vercel.com/teams/team_GTAUKA9S4oSCoYB9ZFCjoj8c?teamId=team_GTAUKA9S4oSCoYB9ZFCjoj8c
+> [debug] [2025-09-15T22:42:19.521Z] #2 → GET https://api.vercel.com/v9/projects/prj_z04pJkmM64zeiPWbBj2Xor6SvLWq?teamId=team_GTAUKA9S4oSCoYB9ZFCjoj8c
+> [debug] [2025-09-15T22:42:20.341Z] #2 ← 200 OK: sfo1::k8z4q-1757976140178-ad840d839a25 [819ms]
+> [debug] [2025-09-15T22:42:20.377Z] #1 ← 200 OK: sfo1::tvsnk-1757976140218-691ac7e1664f [859ms]
+> [debug] [2025-09-15T22:42:20.382Z] Spinner invoked (Loading scopes…) with a 1000ms delay
+> [debug] [2025-09-15T22:42:20.384Z] #3 → GET https://api.vercel.com/v2/user
+> [debug] [2025-09-15T22:42:20.385Z] #4 → GET https://api.vercel.com/v1/teams
+> [debug] [2025-09-15T22:42:20.630Z] #3 ← 200 OK: sfo1::tvsnk-1757976140497-e3e76ddb0421 [246ms]
+> [debug] [2025-09-15T22:42:20.632Z] #4 ← 200 OK: sfo1::k8z4q-1757976140495-9c46068fbd62 [247ms]
+> [debug] [2025-09-15T22:42:20.638Z] Spinner invoked (Searching for existing projects…) with a 1000ms delay
+> [debug] [2025-09-15T22:42:20.640Z] #5 → GET https://api.vercel.com/v9/projects/altamedica-reboot?teamId=team_GTAUKA9S4oSCoYB9ZFCjoj8c
+> [debug] [2025-09-15T22:42:20.904Z] #5 ← 200 OK: sfo1::k8z4q-1757976140750-1247a9c27fd6 [264ms]
+> [debug] [2025-09-15T22:42:20.911Z] Found ".git/config" - detected "/root/altamedica-reboot" as repo root
+Linked to reina08s-projects/altamedica-reboot (created .vercel)
+> [debug] [2025-09-15T22:42:21.451Z] Vercel CLI 47.0.6
+
+> [debug] [2025-09-15T22:42:22.141Z] Telemetry event tracked
+> [debug] [2025-09-15T22:42:22.480Z] Telemetry subprocess exited with code 0
+
+==== Variables de entorno configuradas (nombres) ====
+
+Vercel CLI 47.0.6
+Error: unknown or unexpected option: --yes
+
+==== Build local de Next (precompilado) — opcional ====
+
+
+> autamedica-reboot@ build /root/altamedica-reboot
+> turbo run build
+
+turbo 2.5.6
+
+• Packages in scope: @autamedica/auth, @autamedica/hooks, @autamedica/shared, @autamedica/types, @autamedica/web-app, @repo/eslint-config, @repo/typescript-config
+• Running build in 7 packages
+• Remote caching disabled
+@autamedica/types:build: cache miss, executing b0b5502b6155ccca
+@autamedica/types:build: 
+@autamedica/types:build: > @autamedica/types@0.1.0 build /root/altamedica-reboot/packages/types
+@autamedica/types:build: > tsc -p tsconfig.json
+@autamedica/types:build: 
+@autamedica/auth:build: cache miss, executing 10a47d2b3e3f06ca
+@autamedica/shared:build: cache miss, executing a38686e1345e4fda
+@autamedica/hooks:build: cache miss, executing cd0108c6b2e42a6b
+@autamedica/shared:build: 
+@autamedica/shared:build: > @autamedica/shared@0.1.0 build /root/altamedica-reboot/packages/shared
+@autamedica/shared:build: > tsc -p tsconfig.json
+@autamedica/shared:build: 
+@autamedica/auth:build: 
+@autamedica/auth:build: > @autamedica/auth@0.1.0 build /root/altamedica-reboot/packages/auth
+@autamedica/auth:build: > tsc -p tsconfig.json
+@autamedica/auth:build: 
+@autamedica/hooks:build: 
+@autamedica/hooks:build: > @autamedica/hooks@0.1.0 build /root/altamedica-reboot/packages/hooks
+@autamedica/hooks:build: > tsc -p tsconfig.json
+@autamedica/hooks:build: 
+@autamedica/web-app:build: cache miss, executing c300ec9271541566
+@autamedica/web-app:build: 
+@autamedica/web-app:build: > @autamedica/web-app@0.1.0 build /root/altamedica-reboot/apps/web-app
+@autamedica/web-app:build: > next build
+@autamedica/web-app:build: 
+@autamedica/web-app:build:    ▲ Next.js 15.5.0
+@autamedica/web-app:build:    - Environments: .env.local
+@autamedica/web-app:build: 
+@autamedica/web-app:build:    Creating an optimized production build ...
+@autamedica/web-app:build:  ✓ Compiled successfully in 21.5s
+@autamedica/web-app:build:    Linting and checking validity of types ...
+@autamedica/web-app:build: (node:2943286) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+@autamedica/web-app:build: (Use `node --trace-warnings ...` to show where the warning was created)
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./app/api/health/deep/route.ts
+@autamedica/web-app:build: 40:14  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 62:29  Warning: HIPAA_ENCRYPTION_ENABLED is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 63:24  Warning: AUDIT_LOGGING_ENABLED is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 64:25  Warning: PHI_ENCRYPTION_ENABLED is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 165:12  Warning: A `require()` style import is forbidden.  @typescript-eslint/no-require-imports
+@autamedica/web-app:build: 172:10  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 179:10  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./app/api/health/metrics/route.ts
+@autamedica/web-app:build: 42:34  Warning: VERCEL_GIT_COMMIT_SHA is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 42:113  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./app/api/health/route.ts
+@autamedica/web-app:build: 23:11  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 34:20  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 35:16  Warning: VERCEL_GIT_COMMIT_SHA is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 44:11  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 49:29  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 56:11  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 57:53  Warning: SUPABASE_SERVICE_ROLE_KEY is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 64:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 101:27  Warning: HIPAA_ENCRYPTION_ENABLED is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 102:24  Warning: AUDIT_LOGGING_ENABLED is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 103:25  Warning: PHI_ENCRYPTION_ENABLED is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 108:25  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 137:20  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 138:14  Warning: NODE_ENV is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 154:28  Warning: 'request' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/auth/LoginForm.tsx
+@autamedica/web-app:build: 6:10  Warning: 'ensureEnv' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 58:14  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 99:14  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/experience/EnhancedLandingExperience.tsx
+@autamedica/web-app:build: 46:9  Warning: 'toggleChat' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 284:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/experience/HeroVertical.tsx
+@autamedica/web-app:build: 35:16  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/experience/HorizontalExperience.tsx
+@autamedica/web-app:build: 109:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/experience/LoadingOverlay.tsx
+@autamedica/web-app:build: 41:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/landing/ProfessionalCompaniesFeatures.tsx
+@autamedica/web-app:build: 78:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/landing/ProfessionalDoctorsFeatures.tsx
+@autamedica/web-app:build: 86:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/landing/ProfessionalFooter.tsx
+@autamedica/web-app:build: 197:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/landing/ProfessionalPatientsFeatures.tsx
+@autamedica/web-app:build: 88:14  Warning: Unknown property 'jsx' found  react/no-unknown-property
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/monitoring/PerformanceWidget.tsx
+@autamedica/web-app:build: 75:6  Warning: React Hook useEffect has a missing dependency: 'performance'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/components/monitoring/RealTimeMetrics.tsx
+@autamedica/web-app:build: 129:6  Warning: React Hook useEffect has a missing dependency: 'generateMetrics'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/lib/monitoring.ts
+@autamedica/web-app:build: 1:1  Warning: Unused eslint-disable directive (no problems were reported from 'no-console').
+@autamedica/web-app:build: 7:10  Warning: 'ensureEnv' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 60:16  Warning: VERCEL_GIT_COMMIT_SHA is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 253:19  Warning: SUPABASE_REGION is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 427:82  Warning: DEBUG_MONITORING is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 442:82  Warning: DEBUG_LOGGING is not listed as a dependency in turbo.json  turbo/no-undeclared-env-vars
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ./src/lib/supabase.ts
+@autamedica/web-app:build: 2:10  Warning: 'ensureEnv' is defined but never used.  @typescript-eslint/no-unused-vars
+@autamedica/web-app:build: 
+@autamedica/web-app:build: info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+@autamedica/web-app:build:    Collecting page data ...
+@autamedica/web-app:build:    Generating static pages (0/13) ...
+@autamedica/web-app:build:    Generating static pages (3/13) 
+@autamedica/web-app:build:    Generating static pages (6/13) 
+@autamedica/web-app:build:    Generating static pages (9/13) 
+@autamedica/web-app:build:  ✓ Generating static pages (13/13)
+@autamedica/web-app:build:    Finalizing page optimization ...
+@autamedica/web-app:build:    Collecting build traces ...
+@autamedica/web-app:build: 
+@autamedica/web-app:build: Route (app)                                 Size  First Load JS
+@autamedica/web-app:build: ┌ ○ /                                    5.45 kB         115 kB
+@autamedica/web-app:build: ├ ○ /_not-found                            990 B         103 kB
+@autamedica/web-app:build: ├ ƒ /api/health                            131 B         102 kB
+@autamedica/web-app:build: ├ ƒ /api/health/deep                       131 B         102 kB
+@autamedica/web-app:build: ├ ƒ /api/health/metrics                    131 B         102 kB
+@autamedica/web-app:build: ├ ○ /auth/callback                        1.7 kB         147 kB
+@autamedica/web-app:build: ├ ○ /auth/login                          2.77 kB         151 kB
+@autamedica/web-app:build: ├ ○ /auth/register                         166 B         106 kB
+@autamedica/web-app:build: ├ ○ /terms                                 166 B         106 kB
+@autamedica/web-app:build: └ ○ /unauthorized                          166 B         106 kB
+@autamedica/web-app:build: + First Load JS shared by all             102 kB
+@autamedica/web-app:build:   ├ chunks/52830e44-7ed4c4ca86afd07f.js  54.2 kB
+@autamedica/web-app:build:   ├ chunks/695-16a5d8dbea8ffb14.js       45.9 kB
+@autamedica/web-app:build:   └ other shared chunks (total)          2.08 kB
+@autamedica/web-app:build: 
+@autamedica/web-app:build: 
+@autamedica/web-app:build: ○  (Static)   prerendered as static content
+@autamedica/web-app:build: ƒ  (Dynamic)  server-rendered on demand
+@autamedica/web-app:build: 
+
+ Tasks:    5 successful, 5 total
+Cached:    0 cached, 5 total
+  Time:    1m13.909s 
+
+
+==== Despliegue en Vercel (—prod) con DEBUG ====
+
+Vercel CLI 47.0.6
+Retrieving project…
+The vercel.json file should be inside of the provided root directory.
+Deploying reina08s-projects/altamedica-reboot
+Uploading [--------------------] (0.0B/831.3KB)
+Uploading [=====---------------] (210.1KB/831.3KB)
+Uploading [==========----------] (418.1KB/831.3KB)
+Uploading [===============-----] (626.1KB/831.3KB)
+Uploading [====================] (831.3KB/831.3KB)
+Inspect: https://vercel.com/reina08s-projects/altamedica-reboot/6cwZmeTc2Hex3ez81rd7Bvh6KtyD [5s]
+Production: https://altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.app [5s]
+https://altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.appQueued
+Building
+Completing
+We are attempting to create an SSL certificate for staging.autamedica.com asynchronously.
+
+==== Inspección del despliegue ====
+
+> [debug] [2025-09-15T22:45:04.200Z] Found config in file "/root/altamedica-reboot/vercel.json"
+Vercel CLI 47.0.6
+> [debug] [2025-09-15T22:45:04.204Z] user supplied known subcommand: "inspect"
+> [debug] [2025-09-15T22:45:04.244Z] #1 → GET https://api.vercel.com/v2/user
+> [debug] [2025-09-15T22:45:05.032Z] #1 ← 200 OK: sfo1::n22nc-1757976304905-e1cffe73ee2a [788ms]
+> [debug] [2025-09-15T22:45:05.039Z] #2 → GET https://api.vercel.com/teams/team_GTAUKA9S4oSCoYB9ZFCjoj8c?teamId=team_GTAUKA9S4oSCoYB9ZFCjoj8c
+> [debug] [2025-09-15T22:45:05.287Z] #2 ← 200 OK: sfo1::n22nc-1757976305150-5623eed5e91e [248ms]
+> [debug] [2025-09-15T22:45:05.288Z] Spinner invoked (Fetching deployment "altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.app" in reina08s-projects) with a 300ms delay
+> [debug] [2025-09-15T22:45:05.290Z] #3 → GET https://api.vercel.com/v13/deployments/altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.app?teamId=team_GTAUKA9S4oSCoYB9ZFCjoj8c
+> [debug] [2025-09-15T22:45:05.733Z] #3 ← 200 OK: sfo1::n22nc-1757976305403-5f123749938a [443ms]
+> Fetched deployment "altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.app" in reina08s-projects [451ms]
+> [debug] [2025-09-15T22:45:05.741Z] #4 → GET https://api.vercel.com/v11/deployments/dpl_6cwZmeTc2Hex3ez81rd7Bvh6KtyD/builds?teamId=team_GTAUKA9S4oSCoYB9ZFCjoj8c
+> [debug] [2025-09-15T22:45:06.170Z] #4 ← 200 OK: sfo1::n22nc-1757976305847-79db85272089 [428ms]
+
+  General
+
+    id		dpl_6cwZmeTc2Hex3ez81rd7Bvh6KtyD
+    name	altamedica-reboot
+    target	production
+    status	● Ready
+    url		https://altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.app
+    created	Mon Sep 15 2025 19:43:45 GMT-0300 (hora estándar de Argentina) [1m ago]
+
+
+  Aliases
+
+    ╶ https://autamedica.com
+    ╶ https://www.autamedica.com
+    ╶ https://admin.autamedica.com
+    ╶ https://doctors.autamedica.com
+    ╶ https://staging.autamedica.com
+    ╶ https://patients.autamedica.com
+    ╶ https://companies.autamedica.com
+    ╶ https://altamedica-reboot.vercel.app
+    ╶ https://altamedica-reboot-reina08s-projects.vercel.app
+    ╶ https://altamedica-reboot-reina-08-reina08s-projects.vercel.app
+    
+
+  Builds
+
+    ┌ .        [0ms]
+    ├── λ _not-found (1.75MB) [iad1]
+    ├── λ _not-found.rsc (1.75MB) [iad1]
+    ├── λ auth/callback (1.75MB) [iad1]
+    ├── λ auth/callback.rsc (1.75MB) [iad1]
+    ├── λ auth/login (1.75MB) [iad1]
+    └── 17 output items hidden
+    
+
+> [debug] [2025-09-15T22:45:06.556Z] Vercel CLI 47.0.6
+
+> [debug] [2025-09-15T22:45:07.123Z] Telemetry event tracked
+> [debug] [2025-09-15T22:45:07.435Z] Telemetry subprocess exited with code 0
+
+==== Logs de funciones (si aplica) ====
+
+Vercel CLI 47.0.6
+Error: unknown or unexpected option: --all
+
+==== Resumen JSON ====
+
+{
+  "timestamp": "2025-09-15_194153",
+  "cwd": "/root/altamedica-reboot",
+  "node": "v22.19.0",
+  "pnpm": "9.0.0",
+  "vercel_cli_version": "47.0.6",
+  "vercel_user": "reina-08",
+  "deployment_url": "https://altamedica-reboot-3wm2jrvyn-reina08s-projects.vercel.app",
+  "deploy_failed": false
+}

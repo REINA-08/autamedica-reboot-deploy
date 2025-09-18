@@ -1,0 +1,18 @@
+{
+  "videos": {
+    "primary": [
+      "/videos/Video_Listo_.mp4",
+      "/videos/Video_Listo_Encuentra_Doctor.mp4",
+      "/videos/Video_Listo_Telemedicina.mp4",
+      "/videos/alta-agent-ia.mp4",
+      "/videos/historia-clinica-digital.mp4"
+    ],
+    "mobile": [],
+    "tablet": [],
+    "desktop": [
+      "/videos/consultas-video-hd.mp4"
+    ]
+  },
+  "generated": "2025-09-15T16:27:23.826Z",
+  "totalFiles": 6
+}

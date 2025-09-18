@@ -1,0 +1,29 @@
+{
+  "installCommand": "corepack enable && corepack prepare pnpm@9.15.2 --activate && cd ../.. && HUSKY=0 pnpm install --prod=false",
+  "buildCommand": "cd ../.. && pnpm build:packages && pnpm build --filter @autamedica/web-app",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ]
+}

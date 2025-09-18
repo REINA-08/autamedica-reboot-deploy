@@ -1,0 +1,49 @@
+{
+  "name": "@autamedica/patients",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portal personal para pacientes con acceso a resultados y prescripciones",
+  "main": "src/app/page.tsx",
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@autamedica/types": "workspace:^",
+    "@autamedica/shared": "workspace:^",
+    "@autamedica/auth": "workspace:^",
+    "@autamedica/tailwind-config": "workspace:^",
+    "@autamedica/hooks": "workspace:^",
+    "@autamedica/ui": "workspace:^",
+    "@autamedica/utils": "workspace:^",
+    "@heroicons/react": "^2.1.5",
+    "@nextui-org/react": "^2.4.8",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.39.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.9",
+    "lucide-react": "^0.461.0",
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.14.1",
+    "tailwind-merge": "^2.5.4",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.5.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# Setup Monitoring and Analytics for AltaMedica
+# Configures comprehensive monitoring across all applications
+
+set -e
+
+echo "📊 Configurando Monitoring y Analytics - AltaMedica"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+echo -e "\n${GREEN}✅ Analytics Automáticamente Habilitados en Vercel:${NC}"
+echo ""
+echo "🌐 Web-App Analytics:"
+echo "   📊 https://vercel.com/reina08s-projects/altamedica-reboot/analytics"
+echo "   🚀 https://vercel.com/reina08s-projects/altamedica-reboot/speed-insights"
+echo ""
+echo "👨‍⚕️ Doctors Analytics:"
+echo "   📊 https://vercel.com/reina08s-projects/doctors/analytics"
+echo "   🚀 https://vercel.com/reina08s-projects/doctors/speed-insights"
+echo ""
+echo "👤 Patients Analytics:"
+echo "   📊 https://vercel.com/reina08s-projects/patients/analytics"
+echo "   🚀 https://vercel.com/reina08s-projects/patients/speed-insights"
+echo ""
+echo "🏢 Companies Analytics:"
+echo "   📊 https://vercel.com/reina08s-projects/companies/analytics"
+echo "   🚀 https://vercel.com/reina08s-projects/companies/speed-insights"
+echo ""
+echo "⚙️ Admin Analytics:"
+echo "   📊 https://vercel.com/reina08s-projects/admin/analytics"
+echo "   🚀 https://vercel.com/reina08s-projects/admin/speed-insights"
+
+echo -e "\n${BLUE}📈 Métricas Monitoreadas Automáticamente:${NC}"
+echo ""
+echo "Core Web Vitals:"
+echo "  • LCP (Largest Contentful Paint)"
+echo "  • FID (First Input Delay)"  
+echo "  • CLS (Cumulative Layout Shift)"
+echo "  • TTFB (Time to First Byte)"
+echo ""
+echo "Performance:"
+echo "  • Page load times"
+echo "  • API response times"
+echo "  • Build duration"
+echo "  • Cache hit rates"
+echo ""
+echo "Usage:"
+echo "  • Visitor counts"
+echo "  • Geographic distribution"
+echo "  • Device types"
+echo "  • Traffic sources"
+
+echo -e "\n${YELLOW}⚠️  Alertas Recomendadas (Configuración Manual):${NC}"
+echo ""
+echo "En cada proyecto, configurar alertas para:"
+echo ""
+echo "🔴 Críticas:"
+echo "  • Error Rate > 5%"
+echo "  • API Response Time > 5 seconds"
+echo "  • Build Failures"
+echo "  • SSL Certificate Expiry"
+echo ""
+echo "🟡 Advertencias:"
+echo "  • Core Web Vitals degradation"
+echo "  • Build time > 10 minutes"
+echo "  • Unusual traffic spikes"
+echo "  • Cache miss rate > 50%"
+
+echo -e "\n${GREEN}🔍 URLs de Configuración de Alertas:${NC}"
+echo ""
+echo "• Web-App: https://vercel.com/reina08s-projects/altamedica-reboot/settings/notifications"
+echo "• Doctors: https://vercel.com/reina08s-projects/doctors/settings/notifications"  
+echo "• Patients: https://vercel.com/reina08s-projects/patients/settings/notifications"
+echo "• Companies: https://vercel.com/reina08s-projects/companies/settings/notifications"
+echo "• Admin: https://vercel.com/reina08s-projects/admin/settings/notifications"
+
+echo -e "\n${BLUE}📊 Dashboard Central Recomendado:${NC}"
+echo ""
+echo "Para una vista unificada, considera configurar:"
+echo ""
+echo "• Vercel Dashboard: https://vercel.com/dashboard"
+echo "• Integration con Slack para alertas críticas"
+echo "• Integration con PagerDuty para emergencias médicas"
+echo "• Custom dashboards con Grafana (opcional)"
+
+echo -e "\n${GREEN}🎯 Métricas Específicas Médicas:${NC}"
+echo ""
+echo "Para aplicaciones médicas, monitorear especialmente:"
+echo ""
+echo "👨‍⚕️ Doctors Portal:"
+echo "  • Tiempo de carga de video calls"
+echo "  • Latencia de WebRTC connections"
+echo "  • Uptime durante horas médicas"
+echo ""
+echo "👤 Patients Portal:"
+echo "  • Accesibilidad metrics"
+echo "  • Mobile performance"
+echo "  • Form submission success rates"
+echo ""
+echo "🏢 Companies Portal:"
+echo "  • Crisis response times"
+echo "  • Marketplace transaction success"
+echo "  • Emergency alert delivery"
+
+echo -e "\n${GREEN}✅ Monitoring configurado y listo para usar!${NC}"
+echo ""
+echo "💡 Pro Tip: Revisar analytics semanalmente para optimizar performance."
+
+echo -e "\n${GREEN}🎉 Setup de monitoring completado!${NC}"

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Script global para iniciar sesión de desarrollo con Claude
+# Uso: ./start-claude (desde el directorio del proyecto)
+# o: pnpm claude (usando package.json)
+
+echo "🏥 Autamedica - Claude Development Session Starter"
+echo ""
+
+# Verificar que estamos en el directorio correcto
+if [ ! -f "package.json" ] || [ ! -d "scripts" ]; then
+    echo "❌ Error: Este script debe ejecutarse desde el directorio raíz del proyecto Autamedica"
+    echo "💡 Navega al directorio del proyecto primero: cd /path/to/altamedica-reboot"
+    exit 1
+fi
+
+# Verificar que node_modules existe
+if [ ! -d "node_modules" ]; then
+    echo "📦 Instalando dependencias primero..."
+    pnpm install
+fi
+
+echo "🚀 Iniciando sesión de desarrollo con Claude..."
+echo ""
+
+# Ejecutar el script de inicio
+node scripts/start-claude.mjs

@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "[pre-commit] Running validation checks..."
+
+# Validate Vercel deployment configuration
+echo "[pre-commit] Validating Vercel deployment configuration..."
+node scripts/validate-vercel-deployment.js || {
+  echo "[pre-commit] ❌ Vercel validation failed. Please fix the errors before committing."
+  exit 1
+}
+
+# Sync glossaries
+echo "[pre-commit] Syncing glossaries..."
+pnpm docs:sync || exit 1
+
+# Stage updated files if any
+git add packages/*/GLOSARIO.md docs/GLOSARIO_MAESTRO.md 2>/dev/null || true
+
+echo "[pre-commit] ✅ All pre-commit checks passed."

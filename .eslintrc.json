@@ -1,0 +1,261 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    ".next/",
+    "out/",
+    "coverage/",
+    "**/*.tsbuildinfo",
+    "**/.next/**",
+    "**/dist/**",
+    "**/build/**"
+  ],
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**/*.mjs", "scripts/**/*.js"],
+      "env": {
+        "node": true,
+        "es2022": true
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint", "import", "react-hooks"],
+      "rules": {
+        "no-console": "error",
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+          { "prefer": "type-imports", "disallowTypeAnnotations": true }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+        ],
+        "@typescript-eslint/no-explicit-any": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/order": [
+          "error",
+          {
+            "groups": [["builtin", "external"], ["internal"], ["parent", "sibling", "index"]],
+            "pathGroups": [
+              { "pattern": "@autamedica/**", "group": "internal", "position": "before" }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"]
+          }
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "packageDir": [".", "apps/*", "packages/*"]
+          }
+        ],
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              "@autamedica/*/src/**",
+              "apps/*/**",
+              "**/*.css",
+              "node:*"
+            ],
+            "paths": [
+              {
+                "name": "fs",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "crypto",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "path",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "http",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "https",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "zlib",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "stream",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "child_process",
+                "message": "Node APIs prohibidas en client/edge. Usa @autamedica/shared si necesitas funcionalidad del servidor."
+              },
+              {
+                "name": "firebase-admin",
+                "message": "firebase-admin solo debe usarse en server/api routes."
+              }
+            ]
+          }
+        ],
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "ExportAllDeclaration",
+            "message": "Prohibido export *; usa barrels controlados"
+          },
+          {
+            "selector": "CallExpression[callee.name=\"fetch\"]",
+            "message": "No uses fetch directo. Usa BaseAPIClient de @autamedica/shared para requests HTTP."
+          },
+          {
+            "selector": "AssignmentExpression[left.property.name=\"role\"][right.type=\"Literal\"]",
+            "message": "No uses literales de rol. Usa UserRole de @autamedica/types."
+          },
+          {
+            "selector": "VariableDeclarator[id.name=/role/i][init.type=\"Literal\"]",
+            "message": "No uses literales de rol. Usa UserRole de @autamedica/types."
+          }
+        ],
+        "no-restricted-properties": [
+          "error",
+          {
+            "object": "process",
+            "property": "env",
+            "message": "Usa @autamedica/shared/env.ensureEnv para acceder a variables"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/*/app/**", "apps/*/components/**", "apps/*/src/**"],
+      "env": {
+        "browser": true,
+        "es2022": true
+      },
+      "rules": {
+        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": ["next/server", "firebase-admin"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/*/app/**/route.{ts,tsx}", "apps/*/middleware.{ts,tsx}"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": ["fs", "crypto", "path", "http", "https", "zlib", "stream", "child_process"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/*/app/**/layout.{ts,tsx}"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    },
+    {
+      "files": ["apps/patients/**"],
+      "rules": {
+        "import/no-restricted-paths": [
+          "error",
+          {
+            "zones": [
+              {
+                "target": "apps/patients",
+                "from": "apps/web-app",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              },
+              {
+                "target": "apps/patients",
+                "from": "apps/doctors",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              },
+              {
+                "target": "apps/patients",
+                "from": "apps/companies",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              },
+              {
+                "target": "apps/patients",
+                "from": "apps/admin",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/web-app/**"],
+      "rules": {
+        "import/no-restricted-paths": [
+          "error",
+          {
+            "zones": [
+              {
+                "target": "apps/web-app",
+                "from": "apps/patients",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              },
+              {
+                "target": "apps/web-app",
+                "from": "apps/doctors",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              },
+              {
+                "target": "apps/web-app",
+                "from": "apps/companies",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              },
+              {
+                "target": "apps/web-app",
+                "from": "apps/admin",
+                "message": "No importes desde otra app. Usa packages/** para código compartido."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/*/src/app/api/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              "node:",
+              "fs",
+              "path",
+              "crypto",
+              "stream",
+              "os",
+              "util",
+              "ioredis",
+              "redis",
+              "mongoose"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

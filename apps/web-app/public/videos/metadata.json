@@ -1,0 +1,43 @@
+{
+  "videos": {
+    "Video_Listo_.mp4": {
+      "size": 613,
+      "sizeMB": 0,
+      "lastModified": "2025-09-15T16:17:20.874Z",
+      "publicPath": "/videos/Video_Listo_.mp4"
+    },
+    "Video_Listo_Encuentra_Doctor.mp4": {
+      "size": 634,
+      "sizeMB": 0,
+      "lastModified": "2025-09-15T16:17:20.874Z",
+      "publicPath": "/videos/Video_Listo_Encuentra_Doctor.mp4"
+    },
+    "Video_Listo_Telemedicina.mp4": {
+      "size": 622,
+      "sizeMB": 0,
+      "lastModified": "2025-09-15T16:17:20.874Z",
+      "publicPath": "/videos/Video_Listo_Telemedicina.mp4"
+    },
+    "alta-agent-ia.mp4": {
+      "size": 2122794,
+      "sizeMB": 2.02,
+      "lastModified": "2025-09-15T16:17:20.862Z",
+      "publicPath": "/videos/alta-agent-ia.mp4"
+    },
+    "consultas-video-hd.mp4": {
+      "size": 2122794,
+      "sizeMB": 2.02,
+      "lastModified": "2025-09-15T16:17:20.865Z",
+      "publicPath": "/videos/consultas-video-hd.mp4"
+    },
+    "historia-clinica-digital.mp4": {
+      "size": 5658306,
+      "sizeMB": 5.4,
+      "lastModified": "2025-09-15T16:17:20.873Z",
+      "publicPath": "/videos/historia-clinica-digital.mp4"
+    }
+  },
+  "totalSize": 9905763,
+  "generated": "2025-09-15T16:27:23.827Z",
+  "totalSizeMB": "9.45"
+}

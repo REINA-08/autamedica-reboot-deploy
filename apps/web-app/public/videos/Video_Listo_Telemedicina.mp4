@@ -1,0 +1,20 @@
+# Placeholder para video: medical-history
+# Este archivo debe ser reemplazado por el video real
+# Formato: MP4, duración: 3:20
+# Resolución recomendada: 1920x1080
+# Tamaño máximo: 50MB
+# Codec: H.264
+# Audio: AAC, 128kbps
+# FPS: 30
+
+# En producción, este archivo debe contener el video real
+# Para desarrollo, puede ser un video de prueba o un enlace a un CDN
+
+# Ejemplo de URL de CDN:
+# https://cdn.altamedica.com/videos/medical-history.mp4
+
+# Para desarrollo local, puedes usar:
+# /videos/medical-history.mp4
+
+# Nota: Los videos reales deben ser optimizados para web
+# y comprimidos para reducir el tiempo de carga

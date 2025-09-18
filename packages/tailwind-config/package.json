@@ -1,0 +1,30 @@
+{
+  "name": "@autamedica/tailwind-config",
+  "version": "1.0.0",
+  "description": "Configuración compartida de Tailwind CSS para AutaMedica",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./shared-styles.css": "./shared-styles.css"
+  },
+  "files": [
+    "index.js",
+    "shared-styles.css"
+  ],
+  "keywords": [
+    "tailwindcss",
+    "config",
+    "autamedica",
+    "monorepo"
+  ],
+  "author": "AutaMedica Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

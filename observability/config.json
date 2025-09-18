@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "enabled": true,
+    "providers": [
+      "Prometheus",
+      "DataDog",
+      "Vercel Analytics"
+    ],
+    "retention": "90d"
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "providers": [
+      "Winston",
+      "Pino",
+      "Vercel Logs"
+    ],
+    "hipaaCompliant": true
+  },
+  "tracing": {
+    "enabled": true,
+    "provider": "OpenTelemetry",
+    "sampleRate": 0.1
+  },
+  "alerting": {
+    "enabled": true,
+    "channels": [
+      "email",
+      "slack",
+      "pagerduty"
+    ],
+    "escalation": true
+  },
+  "uptime": {
+    "enabled": true,
+    "intervals": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "endpoints": [
+      "/api/health",
+      "/api/health/db",
+      "/api/health/auth"
+    ]
+  }
+}

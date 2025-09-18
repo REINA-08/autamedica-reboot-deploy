@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-eslint",
+    "ms-playwright.playwright",
+    "ms-vscode.vscode-json",
+    "yoavbls.pretty-ts-errors"
+  ]
+}

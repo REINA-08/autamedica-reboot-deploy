@@ -1,0 +1,7 @@
+{
+  "threshold": 5,
+  "reporters": ["console"],
+  "languages": ["typescript", "tsx"],
+  "include": ["apps/**", "packages/**/src/**", "scripts/**"],
+  "exclude": ["**/node_modules/**", "**/dist/**", "**/.turbo/**", "**/.next/**", "**/*.d.ts", "**/build/**"]
+}
