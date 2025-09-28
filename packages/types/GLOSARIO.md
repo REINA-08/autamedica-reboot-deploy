@@ -13,7 +13,12 @@
 - `ApiErrorCode`
 - `ApiResponse`
 - `Appointment`
+- `AppointmentFilters`
 - `AppointmentId`
+- `AppointmentOverlapValidation`
+- `AppointmentStatus`
+- `AppointmentType`
+- `AppointmentsResponse`
 - `ArrayElement`
 - `AsyncFunction`
 - `AsyncState`
@@ -34,6 +39,7 @@
 - `ComplianceInfo`
 - `Coordinates`
 - `CountryCode`
+- `CreateAppointmentInput`
 - `CreateEntityInput`
 - `DNI`
 - `DataLoadingState`
@@ -69,6 +75,7 @@
 - `JsonValue`
 - `KeysOf`
 - `LICENSE_STATUS`
+- `LegacyAppointment`
 - `LicenseProvinceCode`
 - `Loadable`
 - `LoadingState`
@@ -136,6 +143,7 @@
 - `ThrowsFunction`
 - `TimeHHmm`
 - `TimeSlot`
+- `UpdateAppointmentInput`
 - `UpdateEntityInput`
 - `User`
 - `UserId`

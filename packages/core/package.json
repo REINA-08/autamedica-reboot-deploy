@@ -1,0 +1,62 @@
+{
+  "name": "@autamedica/core",
+  "version": "1.0.0",
+  "description": "Core business logic and services for AutaMedica",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./services/*": {
+      "types": "./dist/services/*.d.ts",
+      "import": "./dist/services/*.js"
+    },
+    "./providers/*": {
+      "types": "./dist/providers/*.d.ts",
+      "import": "./dist/providers/*.js"
+    },
+    "./usecases/*": {
+      "types": "./dist/usecases/*.d.ts",
+      "import": "./dist/usecases/*.js"
+    },
+    "./templates/*": {
+      "types": "./dist/templates/*.d.ts",
+      "import": "./dist/templates/*.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*.d.ts",
+      "import": "./dist/utils/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "@autamedica/types": "workspace:*",
+    "@autamedica/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "typescript": "5.9.2",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "mjml": "^4.15.0"
+  },
+  "peerDependenciesMeta": {
+    "mjml": {
+      "optional": true
+    }
+  }
+}

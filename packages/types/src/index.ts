@@ -395,4 +395,14 @@ export type {
   CompanyContact,
 } from "./entities/company";
 
-export type { Appointment } from "./entities/appointment";
+export type {
+  Appointment,
+  LegacyAppointment,
+  AppointmentStatus,
+  AppointmentType,
+  CreateAppointmentInput,
+  UpdateAppointmentInput,
+  AppointmentOverlapValidation,
+  AppointmentFilters,
+  AppointmentsResponse,
+} from "./entities/appointment";

@@ -4,6 +4,6 @@
 
 ### 🔎 Símbolos (auto)
 
-- (sin símbolos públicos detectados)
+- `ICSGenerator`
 
 <!-- AUTOGEN_SYMBOLS:END -->

@@ -5,6 +5,7 @@
 ### 🔎 Símbolos (auto)
 
 - `useAppointments`
+- `useAppointmentsByPatient`
 - `useAsync`
 - `useDebounce`
 - `usePatients`
