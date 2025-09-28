@@ -18,7 +18,7 @@
     "@autamedica/hooks": "workspace:^",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.8",
-    "@supabase/ssr": "^0.5.2",
+    "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.39.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
