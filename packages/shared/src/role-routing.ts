@@ -9,7 +9,7 @@
 
 // Importar UserRole desde types para evitar dependencia circular
 import type { UserRole } from '@autamedica/types';
-import { ensureServerEnv } from './env';
+// Remove unused import
 
 // Definir ROLES localmente para evitar dependencia circular con auth
 const ROLES = {

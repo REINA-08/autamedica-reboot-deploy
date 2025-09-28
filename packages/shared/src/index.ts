@@ -21,4 +21,8 @@ export { logger } from "./services/logger.service";
 export type { Logger, LogLevel } from "./services/logger.service";
 
 // Role-based routing
-export * from "./role-routing";
+export {
+  createRoleRouter,
+  type RoleRouterConfig,
+  type UserRole
+} from "./role-routing";

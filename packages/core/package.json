@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "@autamedica/types": "workspace:*",
-    "@autamedica/utils": "workspace:*"
+    "@autamedica/utils": "workspace:*",
+    "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

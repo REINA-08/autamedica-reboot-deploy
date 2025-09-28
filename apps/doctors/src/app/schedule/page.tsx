@@ -24,6 +24,7 @@ import {
   toArgentinaTimezone
 } from '@autamedica/utils';
 import type { Appointment, AppointmentStatus, DoctorId } from '@autamedica/types';
+import { GenerateConsultPDFButton } from '../components/GenerateConsultPDFButton';
 
 // Mock doctor ID - TODO: Get from session/auth
 const MOCK_DOCTOR_ID = 'doctor_123' as DoctorId;
@@ -258,6 +259,28 @@ const AppointmentCard: React.FC<{
               No Asistió
             </button>
           </>
+        )}
+
+        {appointment.status === 'completed' && (
+          <div className="w-full">
+            <GenerateConsultPDFButton
+              appointment={appointment}
+              doctor={{
+                full_name: 'Dr. García', // TODO: Get from appointment/session
+                mp: 'MP 12345',
+                speciality: 'Medicina General'
+              }}
+              patient={{
+                full_name: `Paciente #${appointment.patient_id}`, // TODO: Get real patient data
+                doc: 'DNI 12.345.678'
+              }}
+              diagnosis="Consulta médica general"
+              findings="Examen físico normal"
+              prescription="Sin indicaciones especiales"
+              recommendations="Control de rutina en 6 meses"
+              className="w-full justify-center"
+            />
+          </div>
         )}
       </div>
     </div>

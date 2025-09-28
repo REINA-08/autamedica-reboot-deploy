@@ -20,7 +20,11 @@ export default [
       '**/*.d.ts',
       '*.backup.*',
       'app.backup.*/',
-      'apps/web-app/.next/**'
+      'apps/**/.next/**',
+      'scripts/**',
+      '**/.eslintrc.cjs',
+      'packages/tailwind-config/**',
+      'packages/shared/vitest.config.ts'
     ],
   },
   js.configs.recommended,
@@ -32,6 +36,19 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: true,
+      },
+      globals: {
+        console: 'readonly',
+        document: 'readonly',
+        window: 'readonly',
+        global: 'readonly',
+        process: 'readonly',
+        Buffer: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        fetch: 'readonly',
       },
     },
     plugins: {

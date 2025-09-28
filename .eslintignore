@@ -1,0 +1,46 @@
+# Build outputs
+node_modules/
+dist/
+build/
+.turbo/
+.next/
+out/
+coverage/
+
+# TypeScript
+**/*.tsbuildinfo
+**/*.d.ts
+
+# Backup files
+*.backup.*
+app.backup.*/
+
+# Generated files
+**/.next/**
+**/dist/**
+**/build/**
+**/coverage/**
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel

@@ -8,10 +8,13 @@
 - `EnvironmentValidation`
 - `LogLevel`
 - `Logger`
+- `createRoleRouter`
 - `ensureClientEnv`
 - `ensureEnv`
 - `ensureServerEnv`
 - `logger`
+- `type RoleRouterConfig`
+- `type UserRole`
 - `validateEmail`
 - `validateEnvironment`
 - `validateEnvironmentByType`
