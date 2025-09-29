@@ -19,7 +19,7 @@
     "@autamedica/types": "workspace:*",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.57.4",
-    "framer-motion": "^12.23.12",
+    "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
     "next": "^15.5.0",
     "react": "^19.1.0",
