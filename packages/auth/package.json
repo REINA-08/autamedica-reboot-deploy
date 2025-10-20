@@ -28,7 +28,7 @@
     "@autamedica/shared": "workspace:*",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.57.4",
-    "next": "15.5.2"
+    "next": "15.5.6"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
